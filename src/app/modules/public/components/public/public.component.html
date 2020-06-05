@@ -1,0 +1,21 @@
+<app-header></app-header>
+<app-container>
+  <div class="d-flex justify-content-around position-relative" *ngFor="let card of listaEstados">
+    <div class="card bg-light mb-3">
+        <div class="card-header">{{card.estado | uppercase}}</div>
+        <div class="card-body">
+          <h5 class="card-title">CASOS</h5>
+          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
+            content.</p>
+          <div class="card-body">
+            <p class="card-text">CONFIRMADOS: {{card.confirmados}}</p>
+            <p class="card-text">SUSPEITAS: {{card.suspeitas}}</p>
+            <p class="card-text">RECUPERADOS: {{card.recuperados}}</p>
+            <p class="card-text">MORTES: {{card.mortes}}</p>
+          </div>
+        </div>
+    </div>
+  </div>
+
+</app-container>
+<app-footer></app-footer>
