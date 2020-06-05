@@ -1,7 +1,8 @@
 <app-header></app-header>
 <app-container>
-  <div class="d-flex justify-content-around position-relative" *ngFor="let card of listaEstados">
-    <div class="card bg-light mb-3">
+  <div class="row">
+    <div class="d-flex justify-content-around position-relative col-4" *ngFor="let card of listaEstados">
+      <div class="card bg-light mb-3">
         <div class="card-header">{{card.estado | uppercase}}</div>
         <div class="card-body">
           <h5 class="card-title">CASOS</h5>
@@ -14,6 +15,7 @@
             <p class="card-text">MORTES: {{card.mortes}}</p>
           </div>
         </div>
+      </div>
     </div>
   </div>
 
