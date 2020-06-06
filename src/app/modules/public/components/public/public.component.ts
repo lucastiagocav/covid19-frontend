@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { PublicService } from './service/public.service';
 
 @Component({
   selector: 'app-public',
@@ -6,70 +7,35 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./public.component.css']
 })
 export class PublicComponent implements OnInit {
-  listaEstados;
+  estatisticasCovid;
+  totalCases = 0;
+  totalSuspects = 0;
+  totalRefuses = 0;
+  totalDeaths = 0;
 
   dataAtual = new Date().toLocaleString('pt-BR');
 
-  constructor() {
-    this.listaEstados = this.getCardsCovid();
+  constructor(private publicService: PublicService) {
   }
 
   ngOnInit(): void {
+    this.recuperarDados();
   }
 
-
-  getCardsCovid() {
-    return [
-      {
-        estado: 'São Paulo',
-        confirmados: '10',
-        suspeitas: '1000',
-        recuperados: '10000',
-        mortes: '10',
-      },
-      {
-        estado: 'Rio de Janeiro',
-        confirmados: '10',
-        suspeitas: '1000',
-        recuperados: '10000',
-        mortes: '10',
-      },
-      {
-        estado: 'Paraíba',
-        confirmados: '10',
-        suspeitas: '1000',
-        recuperados: '10000',
-        mortes: '10',
-      },
-      {
-        estado: 'Pará',
-        confirmados: '10',
-        suspeitas: '1000',
-        recuperados: '10000',
-        mortes: '10',
-      },
-      {
-        estado: 'Rondônia',
-        confirmados: '10',
-        suspeitas: '1000',
-        recuperados: '10000',
-        mortes: '10',
-      },
-      {
-        estado: 'Amazonas',
-        confirmados: '10',
-        suspeitas: '1000',
-        recuperados: '10000',
-        mortes: '10',
-      },
-      {
-        estado: 'Amapá',
-        confirmados: '10',
-        suspeitas: '1000',
-        recuperados: '10000',
-        mortes: '10',
-      },
-    ];
+  recuperarDados() {
+    try {
+      this.publicService.recuperarDados().subscribe(response => {
+        this.estatisticasCovid = response.data;
+        response.data.forEach(covid => {
+          this.totalCases += parseInt(covid.cases);
+          this.totalDeaths += parseInt(covid.deaths);
+          this.totalRefuses += parseInt(covid.refuses);
+          this.totalSuspects += parseInt(covid.suspects);
+        });
+      });
+    } catch {
+      alert('Serviço indisponível, favor, verificar se o backend está rodando.');
+    }
   }
 
 }
