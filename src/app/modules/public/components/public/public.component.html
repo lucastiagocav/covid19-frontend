@@ -9,26 +9,77 @@
           <a>Atualizado em {{dataAtual}}</a>
         </div>
       </div>
+      <div class="col-5"></div>
+      <div class="col-3 align-cabecalho">
+        <blockquote class="blockquote mb-0">
+          <footer class="blockquote-footer">Ajude com qualquer valor a instituição <cite title="Source Title">Lorem
+              Ipsum</cite></footer>
+          <button href="#" class="btn btn-success align-button">Doação via PagSeguro</button>
+        </blockquote>
+      </div>
     </div>
   </div>
 
-  <div class="row">
-    <div class="d-flex justify-content-around position-relative col-3" *ngFor="let card of listaEstados">
-      <div class="card bg-light mb-3  card-align">
-        <div class="card-header">{{card.estado | uppercase}}</div>
-        <div class="card-body">
-          <h5 class="card-title">CASOS</h5>
-          <p class="card-text"></p>
-          <div class="card-body">
-            <p class="card-text">CONFIRMADOS: {{card.confirmados}}</p>
-            <p class="card-text">SUSPEITAS: {{card.suspeitas}}</p>
-            <p class="card-text">RECUPERADOS: {{card.recuperados}}</p>
-            <p class="card-text">MORTES: {{card.mortes}}</p>
+  <div class="card-principal" *ngIf="estatisticasCovid">
+    <div class="card">
+      <div class="card-header">
+        Estatísticas Gerais
+      </div>
+      <div class="card-body">
+        <div class="row">
+          <div class="col-3 d-flex flex-column justify-content-between">
+            <p class="card-text-apply">{{totalCases}}</p>
+            <p class="m-0 p-0 legenda">Total de Casos</p>
+          </div>
+          <div class="col-3 d-flex flex-column justify-content-between">
+            <p class="card-text-apply">{{totalSuspects}}</p>
+            <p class="m-0 p-0 legenda">Suspeitas</p>
+          </div>
+          <div class="col-3 d-flex flex-column justify-content-between">
+            <p class="card-text-apply">{{totalRefuses}}</p>
+            <p class="m-0 p-0 legenda">Descartados</p>
+          </div>
+          <div class="col-3 d-flex flex-column justify-content-between">
+            <p class="card-text-apply">{{totalDeaths}}</p>
+            <p class="m-0 p-0 legenda">Mortes</p>
           </div>
         </div>
       </div>
     </div>
   </div>
+
+  <app-container>
+    <div class="row">
+      <div class="d-flex justify-content-around position-relative col-2" *ngFor="let card of estatisticasCovid">
+        <div class="card bg-light mb-3  card-align">
+          <div class="card-header">{{card.state  | uppercase }} - {{card.uf}}</div>
+          <div class="card-body">
+            <div class="row">
+              <div class="col-6 d-flex flex-column justify-content-between">
+                <p class="card-text">{{card.cases}}</p>
+                <p class="m-0 p-0">Total de Casos</p>
+              </div>
+              <div class="col-6 d-flex flex-column justify-content-between">
+                <p class="card-text">{{card.suspects}}</p>
+                <p class="m-0 p-0">Suspeitas</p>
+              </div>
+              <div class="col-6 d-flex flex-column justify-content-between">
+                <p class="card-text">{{card.refuses}}</p>
+                <p class="m-0 p-0">Descartados</p>
+              </div>
+              <div class="col-6 d-flex flex-column justify-content-between">
+                <p class="card-text">{{card.deaths}}</p>
+                <p class="m-0 p-0">Mortes</p>
+              </div>
+            </div>
+            <div class="card-body">
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </app-container>
 
 </app-container>
 <app-footer></app-footer>
