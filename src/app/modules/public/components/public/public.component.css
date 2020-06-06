@@ -1,13 +1,47 @@
 .card-align {
   margin-top: 1em;
-  box-shadow: 2.5px 3.5px #888888;
+  -webkit-box-shadow: 0px 0px 20px -5px rgba(8, 8, 26, 1);
+  -moz-box-shadow: 0px 0px 20px -5px rgba(8, 8, 26, 1);
+  box-shadow: 0px 0px 20px -5px rgba(8, 8, 26, 1);
 }
 
 .card-header {
   font-weight: bolder;
-  font-size: 18px;
+  font-size: 22px;
+  background-color: #ffffffc2;
+  border-radius: 8px;
+  text-align: center;
+}
+
+card {
+  border-radius: 4px;
+}
+
+.align-button {
+  margin-left: 12.8em;
+}
+
+.card-text-apply {
+  font-size: 40px;
+  font-weight: bolder;
+  color: #0c154a;
+}
+
+.legenda {
+  font-size: 20px;
+  color: #0c154a;
+}
+
+.justify-content-between {
+  text-align: center;
 }
 
 .align-cabecalho {
   margin-top: 3em;
+  margin-bottom: 2em;
+}
+
+.card-text {
+  font-size: 28px;
+  font-weight: bolder;
 }
