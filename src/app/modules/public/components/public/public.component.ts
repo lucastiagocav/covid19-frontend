@@ -7,15 +7,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PublicComponent implements OnInit {
   listaEstados;
+
+  dataAtual = new Date().toLocaleString('pt-BR');
+
   constructor() {
     this.listaEstados = this.getCardsCovid();
-   }
+  }
 
   ngOnInit(): void {
   }
 
 
-  getCardsCovid(){
+  getCardsCovid() {
     return [
       {
         estado: 'São Paulo',
@@ -66,7 +69,7 @@ export class PublicComponent implements OnInit {
         recuperados: '10000',
         mortes: '10',
       },
-    ]
+    ];
   }
 
 }

@@ -1,0 +1,13 @@
+.card-align {
+  margin-top: 1em;
+  box-shadow: 2.5px 3.5px #888888;
+}
+
+.card-header {
+  font-weight: bolder;
+  font-size: 18px;
+}
+
+.align-cabecalho {
+  margin-top: 3em;
+}

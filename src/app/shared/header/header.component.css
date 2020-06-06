@@ -8,19 +8,11 @@
   border-radius: 5px;
 }
 
-.color-title {
-  color: white;
-}
-
-.fa-search {
-  color: white !important;
-}
-
 .brand-text {
   white-space: nowrap;
   font-weight: bold;
   font-size: 20px;
-  color: #574C70;
+  color: #574c70;
 }
 
 .btn-header {
@@ -30,4 +22,20 @@
   height: 35px;
   padding: 7px;
   text-align: center;
+}
+
+.coronavirus {
+  font-weight: bolder;
+}
+
+.barra-verde {
+  color: rgb(49, 88, 52) !important;
+}
+
+.barra-amarela {
+  color: rgb(175, 173, 58) !important;
+}
+
+.color-theme {
+  color: #0c154a;
 }

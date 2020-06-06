@@ -1,13 +1,24 @@
 <app-header></app-header>
 <app-container>
+
+  <div class="cabecalho">
+    <div class="row">
+      <div class="col-4 align-cabecalho">
+        <h3><span class="painel">Painel</span> Coronavírus</h3>
+        <div class="atualizacao">
+          <a>Atualizado em {{dataAtual}}</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
   <div class="row">
-    <div class="d-flex justify-content-around position-relative col-4" *ngFor="let card of listaEstados">
-      <div class="card bg-light mb-3">
+    <div class="d-flex justify-content-around position-relative col-3" *ngFor="let card of listaEstados">
+      <div class="card bg-light mb-3  card-align">
         <div class="card-header">{{card.estado | uppercase}}</div>
         <div class="card-body">
           <h5 class="card-title">CASOS</h5>
-          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
-            content.</p>
+          <p class="card-text"></p>
           <div class="card-body">
             <p class="card-text">CONFIRMADOS: {{card.confirmados}}</p>
             <p class="card-text">SUSPEITAS: {{card.suspeitas}}</p>
